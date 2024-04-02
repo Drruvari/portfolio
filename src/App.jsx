@@ -56,8 +56,6 @@ function App() {
         })
     })
 
-
-
     return (
         <main className={`wrap`}>
             <MainHeader/>

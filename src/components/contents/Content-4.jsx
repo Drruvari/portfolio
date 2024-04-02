@@ -1,6 +1,31 @@
 import ListBox from "../ListBox.jsx";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Content4 = () => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    useGSAP(() => {
+        //.con4 .listBox animation
+
+        gsap.utils.toArray('.con4 .listBox .box').forEach((selector) => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: selector,
+                    start: '0% 20%',
+                    end: '0% 0%',
+                    scrub: 1,
+                }
+            })
+                .to(selector, {
+                    transform: 'rotateX(-10deg) scale(0.9)',
+                    transformOrigin: 'top',
+                    filter: 'brightness(0.3)',
+                })
+        })
+    })
+
     return (
         <section className={"con4"}>
             <div className="inner">
