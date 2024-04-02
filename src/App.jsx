@@ -9,6 +9,8 @@ import { useGSAP } from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Content3 from "./components/contents/Content-3.jsx";
 import Content4 from "./components/contents/Content-4.jsx";
+import Content5 from "./components/contents/Content-5.jsx";
+import MainFooter from "./components/MainFooter.jsx";
 
 function App() {
     gsap.registerPlugin(ScrollTrigger)
@@ -64,6 +66,8 @@ function App() {
             <Content2 />
             <Content3 />
             <Content4 />
+            <Content5 />
+            <MainFooter />
         </main>
     )
 }
