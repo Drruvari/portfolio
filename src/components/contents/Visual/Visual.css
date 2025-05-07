@@ -1,0 +1,57 @@
+.visual {
+    margin-bottom: 0;
+}
+
+.visual .inner {
+    display: grid;
+    height: 100vh;
+    padding: 25px 50px 25px;
+    box-sizing: border-box;
+    grid-template-rows: auto 1fr auto;
+}
+
+.visual .inner .mainText {
+    max-width: fit-content;
+    font-weight: normal;
+    font-size: 80px;
+    margin-left: auto;
+    letter-spacing: -2px;
+}
+
+.visual .inner .mainText span {
+    display: block;
+    overflow: hidden;
+}
+
+.visual .inner .mainText span i {
+    display: block;
+}
+
+.visual .inner .subText {
+    font-weight: normal;
+    font-size: 20px;
+    align-self: flex-end;
+    margin-bottom: 50px;
+}
+
+.visual .inner .subText span {
+    color: #585858;
+}
+
+
+.visual .logoWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.visual .logoWrap span {
+    width: 16%;
+}
+
+.visual .logoWrap span img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

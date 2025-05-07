@@ -1,0 +1,46 @@
+.projects {
+    background: #ffffff;
+    color: #141212;
+    margin-bottom: 0;
+}
+
+.projects .inner {
+    padding: 50px;
+}
+
+.projects .mainTextBox h2 {
+    font-size: 100px;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-weight: normal;
+}
+
+.projects .listBox {
+    border-top: 1px solid #000000;
+    margin-top: 150px;
+}
+
+.projects .listBox li {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    border-bottom: 1px solid #000000;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.projects .listBox li h3 {
+    font-size: 40px;
+    letter-spacing: -1px;
+    font-weight: normal;
+}
+
+.projects .listBox li p {
+    align-self: center;
+}
+
+.projects .imgBox {
+    position: absolute;
+    transform: scale(0);
+    opacity: 0;
+    z-index: 100;
+}

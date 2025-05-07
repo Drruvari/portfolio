@@ -13,31 +13,31 @@ const LogoWrap = () => {
     return (
         <div className="logoWrap">
             <span>
-                <img id="j" src={logo1} alt="" />
+                <img id="j" src={logo1} alt="C logo" />
             </span>
             <span>
-                <img id="y" src={logo2} alt="" />
+                <img id="y" src={logo2} alt="O logo" />
             </span>
             <span>
-                <img id="o" src={logo3} alt="" />
+                <img id="o" src={logo3} alt="D logo" />
             </span>
             <span>
-                <img id="u" src={logo4} alt="" />
+                <img id="u" src={logo4} alt="E logo" />
             </span>
             <span>
-                <img id="n" src={logo5} alt="" />
+                <img id="n" src={logo5} alt="V logo" />
             </span>
             <span>
-                <img id="g" src={logo6} alt="" />
+                <img id="g" src={logo6} alt="I logo" />
             </span>
             <span>
-                <img id="g" src={logo7} alt="" />
+                <img id="g" src={logo7} alt="D logo" />
             </span>
             <span>
-                <img id="g" src={logo8} alt="" />
+                <img id="g" src={logo8} alt="E logo" />
             </span>
             <span>
-                <img id="g" src={logo9} alt="" />
+                <img id="g" src={logo9} alt="R logo" />
             </span>
         </div>
     )

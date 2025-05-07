@@ -2,7 +2,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { useLayoutEffect, useRef } from 'react';
-import LogoWrap from '../LogoWrap.jsx';
+import LogoWrap from '../../LogoWrap';
+import './Visual.css';
 
 // Register GSAP plugins at module scope
 gsap.registerPlugin(ScrollTrigger, TextPlugin);

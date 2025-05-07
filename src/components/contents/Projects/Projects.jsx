@@ -1,12 +1,13 @@
 import  { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ProjectListBox from '../ProjectListBox.jsx';
+import ProjectListBox from '../../ProjectListBox.jsx';
+import './Projects.css';
 
 // Register ScrollTrigger plugin once at module scope
 gsap.registerPlugin(ScrollTrigger);
 
-const Content5 = () => {
+const Projects = () => {
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -54,7 +55,7 @@ const Content5 = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="con5">
+    <section ref={sectionRef} className="projects">
       <div className="inner">
         <div className="mainTextBox">
           <h2>Other Projects</h2>
@@ -73,4 +74,4 @@ const Content5 = () => {
   );
 };
 
-export default Content5;
+export default Projects;

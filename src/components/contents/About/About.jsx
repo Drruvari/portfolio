@@ -1,11 +1,12 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
+import './About.css'
 
 // Register GSAP plugin once
 gsap.registerPlugin(ScrollTrigger);
 
-const Content1 = () => {
+const About = () => {
     const sectionRef = useRef(null);
     const prompts = [
         'Need a high-performance web app?',
@@ -58,7 +59,7 @@ const Content1 = () => {
     }, []);
 
     return (
-        <section id="about" className="con1" ref={sectionRef}>
+        <section id="about" className="about" ref={sectionRef}>
             <div className="inner">
                 <div className="box">
                     <div className="mainText">
@@ -85,4 +86,4 @@ const Content1 = () => {
     );
 };
 
-export default Content1;
+export default About;

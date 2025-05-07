@@ -1,12 +1,13 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
-import IconBox from '../IconBox.jsx';
+import IconBox from '../../IconBox.jsx';
+import './IdeaToReality.css';
 
 // Register GSAP plugin once
 gsap.registerPlugin(ScrollTrigger);
 
-const Content2 = () => {
+const IdeaToReality = () => {
     const sectionRef = useRef(null);
 
     useLayoutEffect(() => {
@@ -63,7 +64,7 @@ const Content2 = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="con2">
+        <section ref={sectionRef} className="itr">
             <div className="inner">
                 <div className="mainTextBox">
                     <span>Let&apos;s turn your idea into reality</span>
@@ -100,4 +101,4 @@ const Content2 = () => {
     );
 };
 
-export default Content2;
+export default IdeaToReality;

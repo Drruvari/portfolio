@@ -1,0 +1,113 @@
+.services .mainTextBox {
+    position: relative;
+}
+
+.services .mainTextBox span {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.services .mainTextBox .title {
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: -5px;
+    overflow: hidden;
+}
+
+.services .mainTextBox .title i {
+    display: block;
+}
+
+.services .mainTextBox .title.b {
+    text-align: center;
+}
+
+.services .mainTextBox .title.c {
+    align-self: flex-start;
+}
+
+.services .mainTextBox .in {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.services .mainTextBox .in .box {
+    max-width: 550px;
+    margin-right: 20px;
+}
+
+.services .listBox {
+    margin: 100px 0;
+    perspective: 900px;
+}
+
+.services .listBox .box {
+    background: #ffffff;
+    padding: 50px 80px 60px;
+    margin-bottom: 35px;
+    color: #141212;
+    display: grid;
+    grid-template-columns: 60% auto;
+    position: sticky;
+    top: 100px;
+    filter: brightness(1);
+}
+
+.services .listBox .box h2 {
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: -2px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    grid-column: 1/3;
+    margin-bottom: 100px;
+}
+
+.services .listBox .box h3 {
+    font-size: 300px;
+    font-weight: bold;
+    line-height: 0.9;
+    align-self: flex-end;
+}
+
+.services .listBox .box .text {
+    align-self: flex-end;
+    line-height: 1.4;
+}
+
+.services .listBox .box .text h4 {
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.services .listBox .box .text p {
+    opacity: 0.8;
+}
+
+.services .listBox .box.frontend h3 {
+    color: #ffb84f;
+}
+
+.services .listBox .box.backend h3 {
+    color: #90c3cd;
+}
+
+.services .listBox .box.database h3 {
+    color: #47b172;
+}
+
+.services .subTextBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.services .subTextBox .subText {
+    max-width: 600px;
+    font-size: 22px;
+    grid-column-start: 2;
+}
+
+.services .subTextBox .subText:nth-child(1) p {
+    margin-bottom: 20px;
+}

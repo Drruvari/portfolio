@@ -1,0 +1,89 @@
+.itr .inner {
+    position: relative;
+    padding: 40px 50px;
+}
+
+.itr .inner:before {
+    content: '';
+    width: 95%;
+    height: 1px;
+    background: #3b3b3b;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.itr .mainTextBox {
+    position: relative;
+}
+
+.itr .mainTextBox span {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.itr .mainTextBox .in {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.itr .mainTextBox .in .box {
+    max-width: 550px;
+    margin-right: 20px;
+}
+
+.itr .mainTextBox .in .box video {
+    width: 100%;
+}
+
+.itr .mainTextBox .title {
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: -5px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.itr .mainTextBox .title i {
+    display: block;
+}
+
+.itr .mainTextBox .title.a {
+    align-self: flex-end;
+}
+
+.itr .mainTextBox .title.b {
+    margin-right: 400px;
+}
+
+.itr .subTextBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.itr .subTextBox .subText {
+    max-width: 600px;
+    font-size: 22px;
+}
+
+.itr .subTextBox .subText p:nth-child(1) {
+    margin-bottom: 22px;
+}
+
+.itr .subTextBox .iconBox {
+    display: flex;
+}
+
+.itr .subTextBox .iconBox li {
+    width: 28px;
+    margin: 0 10px;
+    place-items: center;
+}
+
+.itr .subTextBox .iconBox li:last-child {
+    width: 40px;
+}

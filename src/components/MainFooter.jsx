@@ -77,7 +77,7 @@ const MainFooter = () => {
                     start: 'top 65%',
                 },
             });
-            gsap.from(LogoWrap, {
+            gsap.from('.logoWrap span', {
                 y: 30,
                 opacity: 0,
                 duration: 1,
