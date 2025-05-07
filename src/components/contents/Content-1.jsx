@@ -1,80 +1,89 @@
-import {useGSAP} from "@gsap/react";
-import {gsap} from "gsap";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef } from 'react';
+
+// Register plugin once
+gsap.registerPlugin(ScrollTrigger);
 
 const Content1 = () => {
+    const sectionRef = useRef(null);
 
-    useGSAP(() => {
-        let textAni = gsap.timeline({
-            repeat: -1,
-        })
+    useLayoutEffect(() => {
+        // Scope all selectors inside this section
+        const ctx = gsap.context(() => {
+            // Infinite list animation
+            const textAni = gsap.timeline({ repeat: -1 }).play();
+            gsap.utils.toArray('.textAni li').forEach(el => {
+                textAni.to(el, {
+                    x: 0,
+                    opacity: 1,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: 'power4.out',
+                    duration: 0.8,
+                });
+            });
 
-        textAni.play()
+            // Scroll-triggered entrance for main text
+            gsap.fromTo(
+                '.mainText p',
+                { x: -150, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 2,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.mainText',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1,
+                    },
+                }
+            );
+        }, sectionRef);
 
-        gsap.utils.toArray('.con1 .textAni li').forEach((selector) => {
-            textAni.to(selector, 0.8, {
-                opacity: 1,
-                repeat: 1,
-                delay: 0,
-                x: 0,
-                yoyo: true,
-                ease: 'power4.out',
-            })
-        })
-
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.con1 .mainText p',
-                start: '100% 100%',
-                end: '100% 100%',
-                scrub: 1,
-                // markers: true,
-            }
-        }).fromTo('.con1 .mainText p', {
-            x: -150,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            ease: 'none',
-            duration: 2
-        })
-    })
+        return () => {
+            // Clean up animations & ScrollTriggers
+            ctx.revert();
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
+    }, []);
 
     return (
-        <section className={"con1"}>
+        <section ref={sectionRef} className="con1">
             <div className="inner">
                 <div className="box">
                     <div className="mainText">
-                        <p>"CREATING A PODCAST <br/> IS GIVING VOICE"</p>
+                        <p>&quot;CREATING A PODCAST <br /> IS GIVING VOICE&quot;</p>
                     </div>
+
                     <div className="subText">
-                        <p>From childhood, I was fascinated by the diversity and strength of emotions that music could
-                            provide.
-                            <br/>Then I fell in love with radio.</p>
-                        <p>I evolved in this environment, surrounded by legends. And I became aware of the power of the
-                            voice.</p>
+                        <p>From childhood, I was fascinated by the diversity and strength of emotions that music could<br />Then I fell in love with radio.</p>
+                        <p>I evolved in this environment, surrounded by legends. And I became aware of the power of the voice.</p>
                         <p>Today, the podcast is a no-brainer. It is sound and meaning, in perfect synergy.</p>
                     </div>
+
                     <div className="subText">
-                        <p>Allow everyone to share their passion. To convey his emotion.
-                            <br/>Get your messages across. With efficiency, aesthetics, and pleasure. It&apos;s our job.</p>
-                        <a href="" className="btn">Listen to the manifesto</a>
+                        <p>Allow everyone to share their passion. To convey his emotion.<br />Get your messages across. With efficiency, aesthetics, and pleasure. It&apos;s our job.</p>
+                        <a href="#" className="btn">Listen to the manifesto</a>
                     </div>
                 </div>
+
                 <div className="textAni">
                     <ul>
                         <li>Do you have a (vague) idea?</li>
-                        <li>A (crazy) desire?<br/>A message (to shout)?</li>
+                        <li>A (crazy) desire?<br />A message (to shout)?</li>
                         <li>Need a little helping hand?</li>
                         <li>Or do we take care of everything?</li>
                         <li>You are in the right place.</li>
                         <li>Contact us</li>
                     </ul>
-                    <a href="" className="btn">Contact us</a>
+                    <a href="#" className="btn">Contact us</a>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Content1;

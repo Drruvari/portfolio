@@ -7,21 +7,18 @@ const Content5 = () => {
                 <div className="mainTextBox">
                     <h2>Other Projects</h2>
                     <ul className="listBox">
-                        <ProjectListBox name={"Daebang"} category={"Industry"} year={"2024"}/>
-                        <ProjectListBox name={"THE Dopda"} category={"Platform"} year={"2024"}/>
-                        <ProjectListBox name={"Musign"} category={"Agency"} year={"2024"}/>
-                        <ProjectListBox name={"Y .studio"} category={"Agency"} year={"2024"}/>
-                        <ProjectListBox name={"Crew a la Mode"} category={"Agency"} year={"2024"}/>
-                        <ProjectListBox name={"Hanhwa"} category={"Chemical"} year={"2024"}/>
-                        <ProjectListBox name={"Phomain"} category={"vietnamese restaurant"} year={"2024"}/>
+                        <ProjectListBox name="Amazon Data Analysis" category="Data" year="2025" />
+                        <ProjectListBox name="Arcon" category="Management" year="2025" />
+                        <ProjectListBox name="Beautybooks" category="Beauty" year="2025" />
+                        <ProjectListBox name="Datastake" category="Analytics" year="2025" />
+                        <ProjectListBox name="Paged" category="Publishing" year="2025" />
+                        <ProjectListBox name="Simplitime" category="Scheduling" year="2025" />
+                        <ProjectListBox name="Whiteboxed" category="CRE Broker Platform" year="2025" />
                     </ul>
-                    <div className="imgBox box">
-                        <img src="../../assets/images/img0.jpg" alt=""/>
-                    </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Content5;

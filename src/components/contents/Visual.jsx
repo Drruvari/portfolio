@@ -1,14 +1,14 @@
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 import LogoWrap from "../LogoWrap.jsx";
-import {useGSAP} from "@gsap/react";
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {TextPlugin} from "gsap/TextPlugin"
 
 const Visual = () => {
     const textData = [
-        'AGENCY',
-        'CREATIVE AUDIO'
-    ]
+        'INNOVATE WITH CODEVIDER',
+        'SCALABLE WEB SOLUTIONS'
+    ];
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -84,7 +84,7 @@ const Visual = () => {
     })
 
     return (
-        <section className="visual">
+        <section id="home" className="visual">
             <div className="inner">
                 <h1 className="mainText">
                     <span>
@@ -94,13 +94,14 @@ const Visual = () => {
                         <i id="text2">Q1JFQVRJVkUgQVVESU8</i>
                     </span>
                 </h1>
-                <h2 className="subText">Creation, production & distribution of podcasts. <br/>
-                    <span>In Toulouse. And everywhere else.</span>
+                <h2 className="subText">
+                    Crafting high-performance web applications that drive growth.<br />
+                    <span>Headquartered in Tirana, Albania — serving clients around the globe.</span>
                 </h2>
-                <LogoWrap/>
+                <LogoWrap />
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Visual;

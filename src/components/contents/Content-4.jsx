@@ -1,7 +1,7 @@
-import ListBox from "../ListBox.jsx";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ListBox from "../ListBox.jsx";
 
 const Content4 = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -27,31 +27,30 @@ const Content4 = () => {
     })
 
     return (
-        <section className={"con4"}>
+        <section id="services" className={"con4"}>
             <div className="inner">
                 <div className="mainTextBox">
                     <span>OUR SERVICE</span>
-                    <p className="title a"><i>CREATION</i></p>
-                    <p className="title b"><i>PRODUCTION</i></p>
+                    <p className="title a"><i>FRONTEND DEVELOPMENT</i></p>
+                    <p className="title b"><i>BACKEND DEVELOPMENT</i></p>
                     <div className="in">
-                        <video className="box" playsInline="" autoPlay="" loop="" muted="">
+                        <video className="box" playsInline autoPlay loop muted>
                             <source
-                                src="https://cdn.sanity.io/files/u6q95fqm/production/c0594d11b2a34d37493ac112d3cb8d1d315a129e.mp4"
-                                type="video/mp4"/>
+                                src="https://videos.pexels.com/video-files/3130182/3130182-sd_640_360_30fps.mp4"
+                                type="video/mp4" />
                         </video>
-                        <p className="title c"><i>DIFFUSION</i></p>
+                        <p className="title c"><i>DATABASE MANAGEMENT</i></p>
                     </div>
                 </div>
                 <ul className="listBox">
-                    <ListBox code={"box a"} title={"CREATION"} number={"1"}/>
-                    <ListBox code={"box b"} title={"PRODUCTION"} number={"2"}/>
-                    <ListBox code={"box c"} title={"DIFFUSION"} number={"3"}/>
+                    <ListBox code="frontend" title="Frontend Development" number="1" />
+                    <ListBox code="backend" title="Backend Development" number="2" />
+                    <ListBox code="database" title="Database Management" number="3" />
                 </ul>
                 <div className="subTextBox">
                     <div className="subText">
-                        <p>At Qude, we don't have big or small projects. We only have people, creativity, sharing.</p>
-                        <p>Each podcast should be a succession of moments of pleasure. Exceptional moments. Design,
-                            production, distribution. And listening.</p>
+                        <p>At CodeVider, every project is a partnership of technology and creativity.</p>
+                        <p>From UI/UX design through development and maintenance, we deliver reliable, scalable solutions tailored to your needs.</p>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ProjectListBox = (props) => {
     return (
         <li>
@@ -7,5 +9,11 @@ const ProjectListBox = (props) => {
         </li>
     )
 }
+
+ProjectListBox.propTypes = {
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+};
 
 export default ProjectListBox;

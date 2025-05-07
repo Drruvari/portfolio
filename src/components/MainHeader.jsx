@@ -1,50 +1,68 @@
-import logo1 from '../assets/images/logo/S_J.png'
-import logo2 from '../assets/images/logo/S_Y.png'
-import logo3 from '../assets/images/logo/S_O.png'
-import logo4 from '../assets/images/logo/S_U.png'
-import logo5 from '../assets/images/logo/S_N.png'
-import logo6 from '../assets/images/logo/S_G.png'
-import {useRef, useState} from "react";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useState } from "react";
+import logo from '../assets/images/codevider-logo.svg';
+
+// Register GSAP ScrollTo plugin for smooth scrolling
+gsap.registerPlugin(ScrollToPlugin);
 
 const MainHeader = () => {
-    const menuOpenRef = useRef(null)
-    const menuBoxRef = useRef(null)
+    const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = useState(false)
-
-
-    const handleClick = () => {
-        if (open === false) {
-            setOpen(true)
-        } else {
-            setOpen(false)
-        }
+    const scrollToSection = (id) => {
+        setOpen(false);
+        gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: id, autoKill: false },
+            ease: "power2.inOut"
+        });
     };
+
     return (
         <header>
             <div className="inner">
-            <a href="#" className="logo">
-                    <span><img src={logo1} alt=""/></span>
-                    <span><img src={logo2} alt=""/></span>
-                    <span><img src={logo3} alt=""/></span>
-                    <span><img src={logo4} alt=""/></span>
-                    <span><img src={logo5} alt=""/></span>
-                    <span><img src={logo6} alt=""/></span>
+                <a
+                    href="#home"
+                    className="logo"
+                    onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
+                >
+                    <img src={logo} alt="CodeVider Logo" />
                 </a>
             </div>
             <nav className="gnb">
-                <p className="menuOpen" ref={menuOpenRef} onClick={handleClick}>
+                <p className="menuOpen" onClick={() => setOpen((prev) => !prev)}>
                     MENU
                 </p>
-                <ul className={`menuBox ${open ? 'on' : ''}`} ref={menuBoxRef}>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">WORK</a></li>
-                    <li><a href="#">PORTFOLIO UX</a></li>
+                <ul className={`menuBox ${open ? 'on' : ''}`}>
+                    <li>
+                        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}>
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("#about"); }}>
+                            ABOUT
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" onClick={(e) => { e.preventDefault(); scrollToSection("#portfolio"); }}>
+                            PORTFOLIO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("#services"); }}>
+                            SERVICES
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}>
+                            CONTACT
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
-    )
-}
+    );
+};
 
 export default MainHeader;
