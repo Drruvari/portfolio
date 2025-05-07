@@ -1,8 +1,49 @@
-import ProjectBox from "../ProjectBox.jsx";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef } from 'react';
+import ProjectBox from '../ProjectBox.jsx';
+
+// Register GSAP plugin once
+gsap.registerPlugin(ScrollTrigger);
 
 const Content3 = () => {
+    const sectionRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            // Animate the section heading
+            gsap.from('.textBox h4', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current.querySelector('.textBox h4'),
+                    start: 'top 80%',
+                },
+            });
+
+            // Animate each ProjectBox item staggered
+            gsap.from(sectionRef.current.querySelectorAll('.listBox > *'), {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 75%',
+                },
+            });
+        }, sectionRef);
+
+        ScrollTrigger.refresh();
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section id="portfolio" className="con3">
+        <section ref={sectionRef} id="portfolio" className="con3">
             <div className="inner">
                 <div className="textBox">
                     <h4>Featured Projects</h4>

@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { Suspense, useEffect } from 'react';
 import './App.css';
 import Content1 from './components/contents/Content-1.jsx';
@@ -6,22 +8,18 @@ import Visual from './components/contents/Visual.jsx';
 import MainFooter from './components/MainFooter.jsx';
 import MainHeader from './components/MainHeader.jsx';
 
+// Register GSAP plugin once at module scope
+gsap.registerPlugin(ScrollTrigger);
+
 // Lazy-load lower-priority content for code-splitting
 const Content3 = React.lazy(() => import('./components/contents/Content-3.jsx'));
 const Content4 = React.lazy(() => import('./components/contents/Content-4.jsx'));
 const Content5 = React.lazy(() => import('./components/contents/Content-5.jsx'));
 
-// Register GSAP plugins once at module scope
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-
 function App() {
-    // Cleanup any ScrollTrigger instances on unmount
+    // Refresh ScrollTrigger positions on mount
     useEffect(() => {
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
+        ScrollTrigger.refresh();
     }, []);
 
     return (
