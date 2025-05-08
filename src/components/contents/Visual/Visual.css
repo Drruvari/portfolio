@@ -55,3 +55,27 @@
     height: auto;
     display: block;
 }
+
+@media screen and (max-width: 768px) {
+    .visual .inner .mainText {
+        font-size: 60px;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .visual .inner .mainText {
+        font-size: 36px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .visual .inner .subText {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .visual .logoWrap span {
+        width: 22%;
+    }
+}

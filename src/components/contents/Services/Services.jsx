@@ -40,6 +40,8 @@ const Services = () => {
         };
     }, []);
 
+    const isMobile = window.innerWidth <= 768;
+
     return (
         <section id="services" className="services" ref={sectionRef}>
             <div className="inner">
@@ -48,7 +50,7 @@ const Services = () => {
                     <p className="title a"><i>FRONTEND DEVELOPMENT</i></p>
                     <p className="title b"><i>BACKEND DEVELOPMENT</i></p>
                     <div className="in">
-                        <video className="box" playsInline autoPlay loop muted>
+                        <video className="box" playsInline autoPlay={!isMobile} loop muted>
                             <source
                                 src="https://videos.pexels.com/video-files/3130182/3130182-sd_640_360_30fps.mp4"
                                 type="video/mp4"

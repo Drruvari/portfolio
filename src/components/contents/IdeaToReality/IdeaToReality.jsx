@@ -63,6 +63,8 @@ const IdeaToReality = () => {
         return () => ctx.revert();
     }, []);
 
+    const isMobile = window.innerWidth <= 768;
+
     return (
         <section ref={sectionRef} className="itr">
             <div className="inner">
@@ -72,7 +74,7 @@ const IdeaToReality = () => {
                         <video
                             className="box"
                             playsInline
-                            autoPlay
+                            autoPlay={!isMobile}
                             loop
                             muted
                         >

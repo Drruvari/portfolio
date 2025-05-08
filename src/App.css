@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -151,6 +148,7 @@ header .gnb .menuOpen {
     padding: 30px 0;
     z-index: 10;
     cursor: pointer;
+    color: #fff;
 }
 
 header .gnb .menuOpen:before {
@@ -383,4 +381,90 @@ footer .logoWrap span img {
     z-index: 9999;
     top: 0;
     left: 0;
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .inner {
+        padding: 0 30px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 8px 20px;
+    }
+
+    header .inner {
+        padding: 20px 30px 0;
+    }
+
+    header .inner .logo {
+        width: 120px;
+    }
+
+    header .gnb .menuBox.on li a {
+        font-size: 30px;
+    }
+
+    footer .inner {
+        padding: 40px 30px 20px;
+    }
+
+    footer .inner .box .mainTextBox h2 {
+        font-size: 60px;
+    }
+
+    footer .logoWrap span {
+        width: 20%;
+    }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+    .btn {
+        font-size: 9px;
+        padding: 6px 16px;
+    }
+
+    header .gnb .menuBox.on li a {
+        font-size: 24px;
+    }
+
+    footer .inner .box .mainTextBox h2 {
+        font-size: 42px;
+    }
+
+    .visual .inner .mainText {
+        font-size: 40px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .visual .inner {
+        padding: 20px;
+    }
+
+    .visual .inner .subText {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .visual .logoWrap {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .visual .logoWrap span {
+        width: 20%;
+    }
+
+    footer .logoWrap span {
+        width: 30%;
+    }
 }

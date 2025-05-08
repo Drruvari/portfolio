@@ -22,9 +22,10 @@ function App() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setLoading(false);
-            ScrollTrigger.refresh();
-        }, 500);
-
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
+        }, 200);
         return () => clearTimeout(timeout);
     }, []);
 

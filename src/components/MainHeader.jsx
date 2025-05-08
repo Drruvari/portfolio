@@ -30,9 +30,14 @@ const MainHeader = () => {
                 </a>
             </div>
             <nav className="gnb">
-                <p className="menuOpen" onClick={() => setOpen((prev) => !prev)}>
+                <button
+                    className="menuOpen"
+                    onClick={() => setOpen((prev) => !prev)}
+                    aria-label="Toggle menu"
+                    aria-expanded={open}
+                >
                     MENU
-                </p>
+                </button>
                 <ul className={`menuBox ${open ? 'on' : ''}`}>
                     <li>
                         <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}>
